@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #demo {
+        width: 100px;
+        height: 100px;
+        border: 1px solid red;
+        position: relative;
+        left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="demo"></div>
+    <script>
+      var n = 1;
+      var id = setInterval(() => {
+        if (n <= 200) {
+          demo.style.left = n + "px";
+          n = n + 1;
+        } else {
+          clearInterval(id);
+        }
+      }, 1000 / 60);
+      //   这里必须+‘px'像素，不加的话，会动不了
+    </script>
+    <!-- 这里的1000/60是1s运动60次的意思 -->
+    <!-- 如果用刚刚console.log('什么都不做')的话，在检查console里面，什么都不做的计数会一直无穷无尽的计数下去，停不下来，
+    所以用clearInterval(id)取消，停止运动 -->
+  </body>
+</html>
