@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>transition用法</title>
+    <style>
+      #demo {
+        width: 100px;
+        height: 100px;
+        border: 1px solid red;
+        transition: all 1s linear 3s;
+      }
+      /*width 1s的意思是如果你的宽度变化了，那就添加1s中间动画; */
+      /* transition:属性名+时长+过渡方式+延迟； width是属性名;1s是时长;linear是过渡方式其中一种，线性（匀速）；ease是缓动；ease-in是淡入；ease-out是淡出；ease-in-out是淡入且淡出；
+      cubic-bezier;step-start;step-end;steps等等，具体含义靠数学函数，数轴方式表达，可以查mdn  */
+      /* 延迟是过多久开始动画,直接用时长表示;毫秒用ms表示 */
+      #demo:hover {
+        width: 200px;
+        height: 200px;
+      }
+      /* demo.end意思是当demo拥有end的时候，如果demo加了空格后在加.end，就是demo后代里面的end;
+      :hover是当鼠标移动这个图标后，产生宽度为200px的变化 */
+    </style>
+  </head>
+  <body>
+    <div id="demo"></div>
+    <!-- div#demo+tab -->
+  </body>
+</html>

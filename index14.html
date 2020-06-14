@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>transform过渡中间的节点-1</title>
+    <style>
+      #demo {
+        width: 100px;
+        height: 100px;
+        border: 1px solid red;
+        margin: 50px;
+        transition: transform 1s linear;
+      }
+      #demo.b {
+        transform: translateX(200px);
+      }
+      /* b是横着走 */
+      #demo.c {
+        transform: translateX(200px) translateY(100px);
+      }
+      /* c是往右且往下走 */
+      /* 这里c中必须加translateX的原因是如果不加的话，到了C点，会回到原点 */
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div id="demo"></div>
+      <button id="button">开始</button>
+    </div>
+    <script>
+      button.onclick = () => {
+        demo.classList.add("b");
+        setTimeout(() => {
+          demo.classList.remove("b");
+          demo.classList.add("c");
+        }, 1000);
+        // 1s计时器，中间停顿1s后，继续向c节点移动
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>rotate旋转用法</title>
+  </head>
+  <style>
+    #demo {
+      border: 1px solid red;
+      width: 100px;
+      height: 200px;
+      margin: 50px;
+    }
+    #demo:hover {
+      transform: rotate(45deg);
+    }
+    /* rotate是旋转的意思，deg是度数的意思；rotateX是沿着X轴转动，会呈现一个缩小的画面，因为转动，所以整体变斜，会让平面图变小；rotateY是
+    沿着Y轴转动，同理；rotateZ与rotate是一样的，都是沿着Z轴，就是纵轴转动，一般用都是这个；rotate3d，这个比较少用，要用的时候，可以查
+    rotate MDN文档 */
+  </style>
+  <body>
+    <div class="wrapper">
+      <div id="demo"></div>
+    </div>
+  </body>
+</html>

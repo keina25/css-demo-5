@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>scale缩放用法</title>
+    <style>
+      #demo {
+        border: 1px solid red;
+        height: 200px;
+        width: 100px;
+        margin: 50px;
+        transition: all 1s;
+      }
+      #demo {
+        transform: scale(1.5, 0.5);
+      }
+      /* scale是缩放的意思，scaleX是变胖（左右）；scaleY是变高（上下），两个的border都有变化，但是因为太容易变形，模糊，所以一般不用；
+      如果要有缩放的动画效果，加上transition:all 1s，就是动画效果1秒；缩写是scale（1.5，0.5） */
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div id="demo"></div>
+    </div>
+  </body>
+</html>

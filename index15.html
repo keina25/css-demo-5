@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>transform过渡中间的节点-1 animation</title>
+    <style>
+      #demo {
+        width: 100px;
+        height: 100px;
+        border: 1px solid red;
+        margin: 50px;
+        /* transition: transform 1s linear; */
+      }
+      /* 这里的transition就可以删掉，没用了 */
+      #demo.start {
+        animation: xxx 1.5s infinite alternate forwards;
+      }
+      /* 把关键帧挂到demo.start上面去，因为一开始是没有动画的；这里的1.5s是动画的总时间 */
+      @keyframes xxx {
+        0% {
+          transform: none;
+        }
+        66.66% {
+          transform: translateX(200px);
+        }
+        100% {
+          transform: translateX(200px) translateY(100px);
+        }
+      }
+      /* keyframe是关键帧的意思，就是开始--中间变化的点---结尾；66.66%是三分之二的意思 */
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div id="demo"></div>
+      <button id="button">开始</button>
+      <button id="xxx">暂停</button>
+      <button id="yyy">恢复</button>
+    </div>
+    <script>
+      button.onclick = () => {
+        demo.classList.add("start");
+      };
+      xxx.onclick = () => {
+        demo.style.animationPlayState = "paused";
+      };
+      yyy.onclick = () => {
+        demo.style.animationPlayState = "running";
+      };
+    </script>
+  </body>
+</html>

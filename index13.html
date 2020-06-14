@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>transition用法-3</title>
+    <!-- visibility:hidden比opacity更好用 -->
+    <style>
+      #demo {
+        width: 100px;
+        height: 100px;
+        border: 1px solid red;
+        transition: all 1s;
+        /* visibility: visible; */
+        background: #000000;
+      }
+      #demo.end {
+        width: 200px;
+        height: 200px;
+        /* visibility: hidden; */
+        background: #ffffff;
+      }
+      /* 颜色也会改变，因为黑色数字从0逐渐变成f */
+    </style>
+  </head>
+  <body>
+    <div id="demo"></div>
+    <button id="x">start</button>
+    <script>
+      x.onclick = () => {
+        demo.classList.add("end");
+      };
+    </script>
+    <!-- 当放大后最后一秒的时候，消失不见，但是还是占着位置的；与display:block变成none是不一样的，这个是直接不见的； -->
+  </body>
+</html>

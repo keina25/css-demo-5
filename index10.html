@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>画心</title>
+    <!-- 这里是三个正方形组成了一个会跳动的圆心 -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      #heart {
+        margin: 100px;
+        position: relative;
+        display: inline-block;
+        transition: all 0.5s;
+      }
+      /* 这里的0.5s可以省略0 */
+      #heart:hover {
+        transform: scale(1.5);
+      }
+      #heart > .bottom {
+        height: 50px;
+        width: 50px;
+        transform: rotate(45deg);
+        background: red;
+      }
+      #heart > .left {
+        height: 50px;
+        width: 50px;
+        position: absolute;
+        bottom: 100%;
+        right: 100%;
+        transform: rotate(45deg) translateX(31px);
+        border-radius: 50% 0 0 50%;
+        background: red;
+      }
+      /* 这里的border-radius对上四个方向的值，慢慢算哪个方向需要变成圆角 */
+      #heart > .right {
+        height: 50px;
+        width: 50px;
+        position: absolute;
+        bottom: 100%;
+        left: 100%;
+        transform: rotate(45deg) translateY(31px);
+        border-radius: 50% 50% 0 0;
+        background: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="heart">
+      <div class="right"></div>
+      <div class="left"></div>
+      <div class="bottom"></div>
+    </div>
+    <!-- right and left都是圆，bottom是旋转45°的正方形 -->
+  </body>
+</html>

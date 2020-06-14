@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>transform功能的介绍</title>
+    <style>
+      #demo {
+        border: 1px solid red;
+        width: 100px;
+        height: 200px;
+        margin: 50px;
+      }
+      /* #demo:hover {
+        transform: translateX(50px);
+      } */
+      /* demo:hover的意思是当鼠标移动至红色框框的时候，就产生变化，这里是向右平行，但是鼠标移回去后，又回到原处了，translateX的意思是向右移动；
+      小技巧：在调试动画的时候，可以开发者工具，右边的在:hover打勾，然后在translateX(50px)中的50按住上键/下键，方框慢慢往右边/向左移动，
+      如果嫌弃移动速度太慢，可以用shift+上键或者下键；同理translateY(50px),是向上/向下移动，这可以用来调整 */
+      #demo {
+        transform: translateZ(50px);
+      }
+      .wrapper {
+        perspective: 1000px;
+        border: 1px solid black;
+      }
+      /* 因为z属于三维空间的纵轴，所以必须加上perspective：这个是透视图的视点（原点）,所以这个的意思是这黑色方框正中点1000px；调整方法如上
+      往下，是往视点方向走，离我们越来越远，反之 */
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div id="demo"></div>
+    </div>
+  </body>
+</html>
